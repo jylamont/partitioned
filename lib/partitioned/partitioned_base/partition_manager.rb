@@ -132,6 +132,8 @@ module Partitioned
       # create this).
       #
       def create_new_partition(*partition_key_values)
+        return if partition_exists?(*partition_key_values)
+
         create_partition_table(*partition_key_values)
         add_partition_table_index(*partition_key_values)
         add_references_to_partition_table(*partition_key_values)
