@@ -171,6 +171,10 @@ module Partitioned
       # delegated to Partitioned::PartitionedBase::PartitionManager::SqlAdapter#partition_table_alias_name
 
       ##
+      # :method: partition_exists?
+      # delegated to Partitioned::PartitionedBase::PartitionManager::SqlAdapter#partition_exists?
+
+      ##
       # :method: sql_adapter
       # delegated to Partitioned::PartitionedBase#sql_adapter
 
@@ -182,7 +186,7 @@ module Partitioned
       def_delegators :parent_table_class, :sql_adapter, :configurator
       def_delegators :sql_adapter, :drop_partition_table, :create_partition_table, :add_partition_table_index,
          :add_references_to_partition_table, :create_partition_schema, :drop_partition_schema, :add_parent_table_rules,
-         :remove_parent_table_rules, :partition_table_name, :partition_table_alias_name
+         :remove_parent_table_rules, :partition_table_name, :partition_table_alias_name, :partition_exists?
 
     end
   end
